@@ -1,0 +1,81 @@
+we create web app for exchange of info between client and server
+server is nothing but a computer (a system that provide info)
+
+exchange of info via (client server architecture) HTTP protocol.
+
+webapp send request to ask question to server and server give the info in form response. 
+
+The communication b/w client server is happen via HTTP protocol.
+
+
+
+
+
+========== Flask ===========
+web framework for creating and working with web application using python.
+
+1. it is based on WSGI (web server gateway interface) architecture which process one request at a time (sequentially) means other requests wait in line until the previous one is completed.
+
+2. Jinja Support : 
+	- Its tool or web template engine.
+	- allow to develop dynamic web pages (dynamic means pages changes based on user/data)
+	- support template inheritance (reduce repetitiveness nd complexity of pages)
+	
+Flask isn't highly efficient for high-traffic or long-running requests, but it's simple and lightweight. 
+
+How to Improve Flask Efficiency:
+====================================
+1. Use a Production-ready Web Server: Gunicorn or uWSGI: These WSGI servers can run multiple workers (processes/threads) to handle more than one request at a time. They allow Flask to handle multiple requests in parallel, even though Flask itself is single-threaded by default.
+
+2. Enable Asynchronous (Async) Code:
+Flask can now support asynchronous programming (with async and await in Python), allowing you to handle long-running requests (like I/O-bound tasks) in a more efficient way. With async code, Flask can handle other requests while waiting for slow tasks (like a database call).
+
+3. Load Balancing: we can distribute traffic across multiple servers to handle a larger volume of requests.
+
+4. Switch to ASGI-based (Asynchronous Server Gateway Interface) Frameworks: Can switch to an ASGI-based framework (like FastAPI or Starlette), which supports asynchronous processing natively. This architecture is much better.
+
+
+
+Flask Terminologies:
+========================
+1. Endpoints: address like https://www.github.com/ronylpatil
+
+2. Path parameters: used to access particular resource at an endpoint. 
+	eg. https://www.crickbuzz.com/matches
+	    https://www.crickbuzz.com/ipl/chennaisuperking
+
+3. Query parameters: used to filter the data received from end point. 
+	eg. https://www.wipro.com/employees   -- ye endpoint meko sare employees return kr raha he
+	    ab meko particular location and department k employees ka info chahiye to endpoint would be 
+	    - https://www.wipro.com/employees?dep=daai&loc=chennai   (?dep=daai&loc=chennai ==> Query parameters)
+		iska matlab he ki es employees k end point se bring the data whose dep is daai and loc is chennai.
+		
+HTTP Methods:
+===============
+POST - create
+GET - read
+PUT - update
+DELETE - delete
+
+
+Response Code: during the client server communication how do we know this communication happend successfully, response code will tell us.
+	       if the client is sharing http method to the server, the server will share the response code to the client.
+============================================================================================================================================
+1xx - Informative  (x can be any digit b/w 0-9) - server is giving some info to client
+2xx - Success - successfull communication
+3xx - Redirection - server will redirect for info and return this response code
+4xx - Client-side error
+5xx - Server-side error
+
+
+
+
+
+
+
+
+
+
+
+
+
