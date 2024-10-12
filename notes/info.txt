@@ -66,16 +66,3 @@ Response Code: during the client server communication how do we know this commun
 3xx - Redirection - server will redirect for info and return this response code
 4xx - Client-side error
 5xx - Server-side error
-
-
-
-
-
-
-
-
-
-
-
-
-
